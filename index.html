@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | NFT preview card component</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+      :root {
+        --clr-primary-400: hsl(215, 51%, 70%);
+        --clr-primary-500: hsl(178, 100%, 50%);
+        --clr-neutral-200: hsl(0, 0%, 100%);
+        --clr-neutral-500: hsl(215, 32%, 27%);
+        --clr-neutral-700: hsl(217, 54%, 11%);
+        --clr-neutral-800: hsl(217, 54%, 11%);
+        --fs-400: 1.125rem;
+        --fw-regular: 300;
+        --fw-semi-bold: 300;
+        --fw-bold: 600;
+      }
+      /* Box sizing rules */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Set core root defaults */
+      html:focus-within {
+        scroll-behavior: smooth;
+      }
+
+      /* Set core body defaults */
+
+      /* A elements that don't have a class get default styles */
+
+      /* Make images easier to work with */
+      img,
+      picture {
+        max-width: 100%;
+
+        /* display: block; */
+      }
+      a {
+        text-decoration: none;
+      }
+      /* Inherit fonts for inputs and buttons */
+      input,
+      button,
+      textarea,
+      select {
+        font: inherit;
+      }
+      body {
+        background-color: hsl(217, 54%, 11%);
+
+        max-height: 100vh;
+      }
+      /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+
+      .card--wrapper {
+        display: grid;
+        gap: 10px;
+        padding: 1.5rem;
+        border-radius: 25px;
+        margin: auto;
+        margin-top: 100px;
+
+        width: 20rem;
+
+        background-color: hsl(216, 50%, 16%);
+      }
+      .card--wrapper h2 {
+        color: hsl(0, 0%, 100%);
+      }
+      .card--wrapper h2:hover,
+      .card--wrapper h2::after {
+        color: hsl(178, 100%, 50%);
+      }
+      .card--wrapper p {
+        color: hsl(215, 51%, 70%);
+        line-height: 1.5;
+      }
+      .card--wrapper .img {
+        position: relative;
+        isolation: isolate;
+      }
+      .card--wrapper .img:hover::after,
+      .card--wrapper .img:focus::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.5;
+
+        background: hsl(178, 100%, 50%);
+        background-image: url("./images/icon-view.svg");
+
+        background-repeat: no-repeat;
+        background-position: center center;
+        z-index: -1;
+      }
+
+      .two-cols img {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+      }
+      .two-cols {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50%;
+      }
+      .two-cols .num {
+        color: hsl(178, 100%, 50%);
+      }
+      .flex {
+        display: flex;
+        justify-content: space-between;
+      }
+      .border {
+        width: 100%;
+        background-color: hsl(215, 51%, 70%);
+        height: 1px;
+        border-radius: 0.2rem;
+        margin-top: 10px;
+      }
+      .creator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+      .creator img {
+        width: 50px;
+        border: 2px solid hsl(0, 0%, 100%);
+        border-radius: 50%;
+      }
+      .creator span {
+        color: hsl(0, 0%, 100%);
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="card--wrapper">
+        <div class="img">
+          <img src="./images/image-equilibrium.jpg" />
+        </div>
+        <h2>Equilibrium #3429</h2>
+
+        <p>Our Equilibrium collection promotes balance and calm.</p>
+        <div class="two-cols">
+          <div class="flex">
+            <img src="./images/icon-ethereum.svg" />
+            <p class="num">0.041 ETH</p>
+          </div>
+
+          <div class="flex">
+            <img src="./images/icon-clock.svg" />
+            <p>3 days left</p>
+          </div>
+        </div>
+        <div class="border"></div>
+        <div class="creator">
+          <img src="./images/image-avatar.png" alt="" />
+          <p>Creation of <span>Jules Wyvern</span></p>
+        </div>
+      </div>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+</html>
